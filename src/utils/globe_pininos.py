@@ -26,8 +26,9 @@ def load_glove(path_to_glove='glove.6B.50d.txt'):
     return word2em
 
 word2em = load_glove('glove.6B.50d.txt') # Con glove.6B.50d.txt esta en el directorio
+embedding_dim=50
 
-def encode_doc(doc, max_allowed_doc_length=None):
+def encode_doc(doc, embedding_dim=50, max_allowed_doc_length=None):
     '''
     Representacion de una oracion en la coleccion glove.GB.XXd.txt antes cargada
     Nota: se fija un parametro de longitud maxima
@@ -52,6 +53,7 @@ def encode_doc(doc, max_allowed_doc_length=None):
 # Ejemplos
 
 doc='the shadow of your smile'
+encode_doc(doc,50)
 encode_doc('happy',50)
 encode_doc('flower',10)
 encode_doc('sunflower',10)
